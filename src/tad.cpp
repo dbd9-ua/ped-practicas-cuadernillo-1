@@ -11,8 +11,9 @@ int main(int argc, char const *argv[])
 
     t2.setx(8);
 
-    cout<<t.getx();
-    cout<<t2.getx();
+    cout<<t.getx();//3
+    
+    cout<<t2.getx();//8
 
     return 0;
 }

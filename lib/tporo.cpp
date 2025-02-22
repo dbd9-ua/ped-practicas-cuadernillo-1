@@ -31,6 +31,8 @@ bool TPoro::operator==(TPoro &tporo2)
     {
         return true;
     }
+    return false;
+    
 }
 
 /* ostream& operator<<(ostream& os,const TPoro& poro){
