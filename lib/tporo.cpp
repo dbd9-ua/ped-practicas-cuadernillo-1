@@ -29,6 +29,13 @@ TPoro::TPoro(const TPoro &sth)
     this->volumen = sth.volumen;
     this->color = sth.color;
 }
+TPoro::~TPoro()
+{
+   delete [] this->color;
+   this->x=0;
+   this->y=0;
+   this->volumen=0.0;
+}
 
 TPoro& TPoro::operator=(const TPoro &sth)
 {
@@ -46,14 +53,6 @@ TPoro& TPoro::operator=(const TPoro &sth)
 
     return *this; // retorna algo por referencia no por valor. a=b: a.=(b) y no es const. 
                     //Lo de rvalue y lvalue solo se estudia en el paso de parametros. valores temporales de ambitos.
-}
-
-TPoro::~TPoro()
-{
-   delete [] this->color;
-   this->x=0;
-   this->y=0;
-   this->volumen=0.0;
 }
 
 bool TPoro::operator==(const TPoro &tporo2)const
