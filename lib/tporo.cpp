@@ -49,8 +49,12 @@ TPoro &TPoro::operator=(TPoro &sth)
 
 TPoro::~TPoro()
 {
-    //?
+   delete [] this->color;
+   this->x=0;
+   this->y=0;
+   this->volumen=0.0;
 }
+
 bool TPoro::operator==(TPoro &tporo2)
 {
     /*     En el “operator==”, dos poros son iguales si poseen la misma posición, el mismo volumen y el
