@@ -5,15 +5,17 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
-    TPoro t(3,4,3.4);
-
-    TPoro t2=t;
-
-    t2.setx(8);
-
-    cout<<t.getx();//3
+    TPoro t{3,4,3.4};
     
-    cout<<t2.getx();//8
+    cout<<t;
+
+    if(t.EsVacio()){
+        
+        cout<<"t es vacío"<<endl;
+
+    }else{
+        cout <<"no es vacío"<<endl;
+    }
 
     return 0;
 }
