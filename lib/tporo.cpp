@@ -22,7 +22,7 @@ TPoro::TPoro(int x, int y, double d, char *c /*cadena del color*/)
     this->volumen = d;
     this->color = c;
 }
-TPoro::TPoro(TPoro &sth)
+TPoro::TPoro(const TPoro &sth)
 {
     this->x = sth.x;
     this->y = sth.y;
@@ -30,7 +30,7 @@ TPoro::TPoro(TPoro &sth)
     this->color = sth.color;
 }
 
-TPoro &TPoro::operator=(TPoro &sth)
+TPoro& TPoro::operator=(const TPoro &sth)
 {
     TPoro t{sth.x, sth.y, sth.volumen, sth.color};
 
@@ -44,7 +44,8 @@ TPoro &TPoro::operator=(TPoro &sth)
         this->color = nullptr;
     }
 
-    return *this; // lvalue
+    return *this; // retorna algo por referencia no por valor. a=b: a.=(b) y no es const. 
+                    //Lo de rvalue y lvalue solo se estudia en el paso de parametros. valores temporales de ambitos.
 }
 
 TPoro::~TPoro()
@@ -55,7 +56,7 @@ TPoro::~TPoro()
    this->volumen=0.0;
 }
 
-bool TPoro::operator==(TPoro &tporo2)
+bool TPoro::operator==(const TPoro &tporo2)const
 {
     /*     En el “operator==”, dos poros son iguales si poseen la misma posición, el mismo volumen y el
     mismo color.
@@ -85,7 +86,7 @@ bool TPoro::operator==(TPoro &tporo2)
     return os;
 }
  */
-bool TPoro::operator!=(TPoro &sth)
+bool TPoro::operator!=(const TPoro &sth)const
 {
       /*     En el “operator==”, dos poros son iguales si poseen la misma posición, el mismo volumen y el
     mismo color.
@@ -122,23 +123,23 @@ void TPoro::Color(char* color){
     
 }
 
-int TPoro::PosicionX(){
+int TPoro::PosicionX()const{
     return this->x;
 }
 
-int TPoro::PosicionY(){
+int TPoro::PosicionY()const{
     return this->y;
 }
 
-double TPoro::Volumen(){
+double TPoro::Volumen()const{
     return this->volumen;
 }
 
-char* TPoro::Color(){
+char* TPoro::Color()const{
     return this->color;
 }
 
-bool TPoro::EsVacio(){
+bool TPoro::EsVacio()const{
     if(this->x==0 &&
         this->y==0&&
         this->color==nullptr&&

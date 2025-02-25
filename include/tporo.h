@@ -12,15 +12,15 @@ class TPoro
     TPoro();
     TPoro(int, int, double);
     TPoro(int, int, double, char *);
-    TPoro(TPoro &);
+    TPoro(const TPoro &);
     ~TPoro();
-    TPoro &operator=(TPoro &);
+    TPoro &operator=(const TPoro &);//retorna un rvalue este operador
 
     // Sobrecarga del operador igualdad
-    bool operator==(TPoro &);
+    bool operator==(const TPoro &)const;
 
     // Sobrecarga del operador desigualdad
-     bool operator!=(TPoro &);
+     bool operator!=(const TPoro &) const;
 
     // Modifica la posición
     void Posicion(int, int);
@@ -29,17 +29,17 @@ class TPoro
     // Modifica el color
     void Color(char *);
     // Devuelve la coordenada x de la posición
-    int PosicionX();
+    int PosicionX()const;
     // Devuelve la coordenada y de la posición
-    int PosicionY();
+    int PosicionY()const;
     // Devuelve el volumen
-    double Volumen();
+    double Volumen()const;
     // Devuelve el color
-    char *Color();
+    char *Color()const;
     // Devuelve cierto si el poro está vacío
-    bool EsVacio();
+    bool EsVacio()const;
 
     // Sobrecarga del operador SALIDA
-    friend ostream& operator<<(ostream &, const TPoro &); 
+    friend ostream& operator<<(ostream &, const TPoro &); //no modifica la clase pero podría porque es friend.
     
 };
