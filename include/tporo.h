@@ -12,14 +12,16 @@ class TPoro
     TPoro();
     TPoro(int, int, double);
     TPoro(int, int, double, char *);
-    //TPoro(TPoro &);
-    //~TPoro();
-    //TPoro &operator=(TPoro &);
+    TPoro(TPoro &);
+    ~TPoro();
+    TPoro &operator=(TPoro &);
 
     // Sobrecarga del operador igualdad
     bool operator==(TPoro &);
+
     // Sobrecarga del operador desigualdad
-/*     bool operator!=(TPoro &);
+     bool operator!=(TPoro &);
+
     // Modifica la posición
     void Posicion(int, int);
     // Modifica el volumen
@@ -38,9 +40,6 @@ class TPoro
     bool EsVacio();
 
     // Sobrecarga del operador SALIDA
-    friend ostream& operator<<(ostream &, const TPoro &); */
-
-    int getx();
-
-    void setx(int);
+    friend ostream& operator<<(ostream &, const TPoro &); 
+    
 };
