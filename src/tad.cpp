@@ -7,7 +7,7 @@ int main(int argc, char const *argv[])
 {
     TPoro t{3,4,3.4};
     
-   // cout<<t;
+   cout<<t;
 
     if(t.EsVacio()){
         
