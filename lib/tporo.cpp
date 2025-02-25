@@ -69,7 +69,7 @@ bool TPoro::operator==(const TPoro &tporo2)const
     return false;
 }
 
-/* ostream &operator<<(ostream &os, const TPoro &poro)
+ ostream &operator<<(ostream &os, const TPoro &poro)
 {
     if (!poro.EsVacio())
     {
@@ -85,7 +85,7 @@ bool TPoro::operator==(const TPoro &tporo2)const
         os << "()";
     return os;
 }
- */
+ 
 bool TPoro::operator!=(const TPoro &sth)const
 {
       /*     En el “operator==”, dos poros son iguales si poseen la misma posición, el mismo volumen y el
