@@ -87,7 +87,15 @@ bool TPoro::operator==(TPoro &tporo2)
  */
 bool TPoro::operator!=(TPoro &sth)
 {
-    return !(sth==*this);
+      /*     En el “operator==”, dos poros son iguales si poseen la misma posición, el mismo volumen y el
+    mismo color.
+     */
+    if ((this->x == sth.x && this->y == sth.y) /*misma posición*/ && this->volumen == sth.volumen &&
+        strcmp(this->color, sth.color) == 0 /*las cadenas son iguales*/)
+    {
+        return false;
+    }
+    return true;
 }
 
 void TPoro::Posicion(int x, int y){
